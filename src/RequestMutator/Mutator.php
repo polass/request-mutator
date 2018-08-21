@@ -279,7 +279,7 @@ trait Mutator
     public function hasDateFormatRule($key)
     {
         foreach ($this->getRule($key) as $rule) {
-            if (Str::startsWith($rule, 'date_format:')) {
+            if (is_string($rule) && Str::startsWith($rule, 'date_format:')) {
                 return true;
             }
         }
